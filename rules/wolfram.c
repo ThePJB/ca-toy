@@ -97,7 +97,7 @@ void rule_wolfram_update(void *state) {
     printf("generation %d: %d alive, %d dead\n", wc->generation++, non, nempty);
 }
 
-void rule_wolfram_draw(gef_context *gc, void *state) {
+void rule_wolfram_draw(gef_context *gc, void *state, int scale) {
     wolfram_context *wc = (wolfram_context*)state;
     grid g = wc->g[wc->curr_buffer];
     for (int i = 0; i < g.w; i++) {
@@ -106,9 +106,9 @@ void rule_wolfram_draw(gef_context *gc, void *state) {
             grid_get(g, &t, i, j);
 
             if (t) {
-                gef_put_pixel(gc, 255, 255, 255, 255, i, j);
+                gef_put_square(gc, 255, 255, 255, 255, i*scale, j*scale, scale);
             } else {
-                gef_put_pixel(gc, 0, 0, 0, 255, i, j);
+                gef_put_square(gc, 0, 0, 0, 255, i*scale, j*scale, scale);
             }
         }
     }

@@ -96,6 +96,12 @@ void gef_put_pixel(gef_context *gc, int r, int g, int b, int a, int x, int y) {
     SDL_RenderDrawPoint(gc->renderer, x, y);
 }
 
+void gef_put_square(gef_context *gc, int r, int g, int b, int a, int x, int y, int s) {
+    SDL_SetRenderDrawColor(gc->renderer, r, g, b, 255);
+    SDL_RenderFillRect(gc->renderer, &(SDL_Rect){x, y, s, s});
+    //SDL_RenderDrawPoint(gc->renderer, x, y);
+}
+
 void gef_present(gef_context *gc) {
     SDL_RenderPresent(gc->renderer);
 }

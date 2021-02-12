@@ -26,7 +26,6 @@ bool strings_is_dec_int(char *a) {
 
     do {
         char c = *a;
-        printf("%c [%d]\n", c, c);
         if (c < '0' || c > '9') {
             return false;
         }

@@ -1,17 +1,21 @@
 # CA-Toy
 Its sort of a framework for cellular automatas written in C, using SDL.
 
+## Building
+make
+
+dependencies: SDL2, SDL2-image, SDL2-ttf
+
 ## Command Line Args
  * --width (default 640)
  * --height (default 480)
  * --scale (default 1)
 
 ## Controls
- * ESC to quit
- * m for menu
- * 1-4 to switch CA's
+ * ESC to open application menu
+ * m to open CA specific menu
  * r to reset
- * hjkl for menu navigation
+ * wasd or hjkl for menu navigation
 
  ## Current CA's
  1. Predator Prey
@@ -36,9 +40,3 @@ Its sort of a framework for cellular automatas written in C, using SDL.
  * 'gef' is a made up name for the SDL wrapper
  * CA's are pretty modular, they are in the rules subdirectory, they have to satisfy the rule 'interface' from application.h
  * the rules array in application.c is where they are registered. Should this be a member of application? maybe
-
-## Todos
- * scaling and panning
- * speed (steps per frame)
- * menu for these things
- * clap for res and scale maybe (draw just needs to know scale, xres, yres etc)

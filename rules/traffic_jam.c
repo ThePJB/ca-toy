@@ -91,7 +91,7 @@ void rule_traffic_jam_update(void *state) {
     printf("generation %d: %d blue, %d red, %d empty\n", tjc->generation++, nblue, nred, nempty);
 }
 
-void rule_traffic_jam_draw(gef_context *gc, void *state) {
+void rule_traffic_jam_draw(gef_context *gc, void *state, int scale) {
     traffic_jam_context *tjc = (traffic_jam_context*)state;
     grid g = tjc->g[tjc->curr_buffer];
     for (int i = 0; i < g.w; i++) {
@@ -100,11 +100,11 @@ void rule_traffic_jam_draw(gef_context *gc, void *state) {
             grid_get(g, &t, i, j);
 
             if (t.type == empty) {
-                gef_put_pixel(gc, 255, 255, 255, 255, i, j);
+                gef_put_square(gc, 255, 255, 255, 255, i*scale, j*scale, scale);
             } else if (t.type == blue) {
-                gef_put_pixel(gc, 0, 0, 255, 255, i, j);
+                gef_put_square(gc, 0, 0, 255, 255, i*scale, j*scale, scale);
             } else if (t.type == red) {
-                gef_put_pixel(gc, 255, 0, 0, 255, i, j);
+                gef_put_square(gc, 255, 0, 0, 255, i*scale, j*scale, scale);
             }
         }
     }

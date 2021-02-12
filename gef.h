@@ -40,6 +40,7 @@ void gef_end_frame(gef_context *gc);
 void gef_clear(gef_context *gc);
 void gef_set_colour(gef_context *gc, int r, int g, int b, int a);
 void gef_put_pixel(gef_context *gc, int r, int g, int b, int a, int x, int y);
+void gef_put_square(gef_context *gc, int r, int g, int b, int a, int x, int y, int s);
 void gef_present(gef_context *gc);
 
 font_handle gef_load_font(char *path, int size);

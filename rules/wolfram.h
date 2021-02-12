@@ -15,7 +15,7 @@ void rule_wolfram_reset_grid(void *state, int xres, int yres);
 void *rule_wolfram_init_random(int xres, int yres);
 void rule_wolfram_reset_grid_random(void *state, int xres, int yres);
 void rule_wolfram_update(void *state);
-void rule_wolfram_draw(gef_context *gc, void *state);
+void rule_wolfram_draw(gef_context *gc, void *state, int scale);
 
 bool rule_wolfram_menu(void *state, int index, char *buf);
 void rule_wolfram_succ(void *state, int index, bool up);

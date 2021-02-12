@@ -112,21 +112,38 @@ void rule_predator_prey_update(void *pp_context_vp) {
     printf("generation %d: %d grass, %d prey, %d pred\n", generation++, ngrass, nprey, npred);
 }
 
-void rule_predator_prey_draw(gef_context *gc, void *pp_context) {
+void rule_predator_prey_draw(gef_context *gc, void *pp_context, int scale) {
     grid g = ((predator_prey_context*)pp_context)->g;
     for (int i = 0; i < g.w; i++) {
         for (int j = 0; j < g.h; j++) {
             predator_prey_tile t;
             grid_get(g, &t, i, j);
 
+            int red = 0;
+            int green = 0;
+            int blue = 0;
+
             if (t.type == grass) {
-                int greenness = 100 + t.food * 100;
-                gef_put_pixel(gc, 50, greenness, 70, 255, i, j);
+                red = 50;
+                green = 100 + t.food * 100;
+                blue = 70;
             } else if (t.type == prey) {
-                gef_put_pixel(gc, 255, 255, 255, 255, i, j);
+                red = 255;
+                green = 255;
+                blue = 255;
             } else if (t.type == predator) {
-                gef_put_pixel(gc, 255, 100, 100, 255, i, j);
+                red = 255;
+                green = 100;
+                blue = 100;
             }
+            gef_put_square(gc, red, green, blue, 255, i*scale, j*scale, scale);
+            /*
+            for (int k = 0; k < scale; k++) {
+                for (int l = 0; l < scale; l++) {
+                    gef_put_pixel(gc, red, green, blue, 255, i*scale + k, j*scale + l);
+                }
+            }
+            */
         }
     }
 }
