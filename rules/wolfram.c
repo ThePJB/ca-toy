@@ -10,6 +10,7 @@
 // 150 is 2x 102
 
 // 108 109 and back is cool it makes faces
+// 168-173 is cool makes walls
 
 const float starting_on_chance = 0.5;
 

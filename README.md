@@ -16,12 +16,17 @@ dependencies: SDL2, SDL2-image, SDL2-ttf
  * m to open CA specific menu
  * r to reset
  * wasd, hjkl or arrows for menu navigation
+ * space to play/pause
 
  ## Current CA's
  1. Predator Prey
+ ![Predator Prey](ca1-pp.png)
  2. Biham–Middleton–Levine traffic model (https://en.wikipedia.org/wiki/Biham%E2%80%93Middleton%E2%80%93Levine_traffic_model)
+ ![BML](ca2-bml.png)
  3. Elementary CA's (https://en.wikipedia.org/wiki/Elementary_cellular_automaton) with single on pixel start
- 4. Elementary CA's with randomized start
+ ![Rule 30](ca3-rule30.png)
+ 4. Elementary CA's with randomized start (changing between them is fun)
+ ![Various Elementary CA's](ca4-elementary.png)
 
 ## CA ideas
 * Elementary CA's++: resulting state also depends on previous value of the pixel (4 bits), or previous neighbourhood (6 bits), or on a wider neighbourhood (5 bits)
@@ -42,4 +47,4 @@ dependencies: SDL2, SDL2-image, SDL2-ttf
  * the rules array in application.c is where they are registered. Should this be a member of application? maybe
 
  ## Todos
-  * plotting populations over time would be nice (since PP is described by some kind of differential equaiton thing which has like sinusoidal or constant or exponential solutions)
+  * plotting populations over time would be nice (since PP is described by some kind of differential equation thing which has like sinusoidal or constant or exponential solutions, it would be cool to see that in action)
