@@ -15,7 +15,7 @@ dependencies: SDL2, SDL2-image, SDL2-ttf
  * ESC to open application menu
  * m to open CA specific menu
  * r to reset
- * wasd or hjkl for menu navigation
+ * wasd, hjkl or arrows for menu navigation
 
  ## Current CA's
  1. Predator Prey
@@ -40,3 +40,6 @@ dependencies: SDL2, SDL2-image, SDL2-ttf
  * 'gef' is a made up name for the SDL wrapper
  * CA's are pretty modular, they are in the rules subdirectory, they have to satisfy the rule 'interface' from application.h
  * the rules array in application.c is where they are registered. Should this be a member of application? maybe
+
+ ## Todos
+  * plotting populations over time would be nice (since PP is described by some kind of differential equaiton thing which has like sinusoidal or constant or exponential solutions)

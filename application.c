@@ -149,10 +149,10 @@ void application_handle_input(application *app) {
         if (e.type == SDL_KEYDOWN) {
             SDL_Keycode sym = e.key.keysym.sym;
 
-            bool up = sym == SDLK_k || sym == SDLK_w;
-            bool left = sym == SDLK_h || sym == SDLK_a;
-            bool right = sym == SDLK_l || sym == SDLK_d;
-            bool down = sym == SDLK_j || sym == SDLK_s;
+            bool up = sym == SDLK_k || sym == SDLK_w || sym == SDLK_UP;
+            bool left = sym == SDLK_h || sym == SDLK_a || sym == SDLK_LEFT;
+            bool right = sym == SDLK_l || sym == SDLK_d || sym == SDLK_RIGHT;
+            bool down = sym == SDLK_j || sym == SDLK_s || sym == SDLK_DOWN;
 
             if (sym == SDLK_ESCAPE) {
                 if (app->current_menu == &app->app_menu) {
